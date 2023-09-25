@@ -15,9 +15,16 @@ public class SpringSsoGoogleApplication {
 	public String welcome(){
 		return "Welcome to Google !!";
 	}
-	@GetMapping("/user")
-	public Principal user(Principal principal){
+	@GetMapping("/userName")
+	public String userName(Principal principal){
 		System.out.println("username:"+principal.getName());
+
+		return principal.getName();
+	}
+	@GetMapping("/userinfo")
+	public Principal userinfo(Principal principal){
+		System.out.println("userInfo:"+principal.getName());
+
 		return principal;
 	}
 	public static void main(String[] args) {
